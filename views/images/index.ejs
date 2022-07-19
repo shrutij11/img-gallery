@@ -1,0 +1,29 @@
+
+    <% layout('/layouts/boilerplate') %>
+    <h1>Image Gallery </h1>
+    <div>
+        <a href="/images/new">Add Image</a>
+    </div>
+   
+        <section class="mt-5">
+            <div class="row">
+                <% for (let image of images) {%>
+                <div class="col-4">
+                <div class="card shadow mb-4" style="width: 25rem;">
+                    <img src="<%=image.ImgURL%>" class="card-img-top img-fluid"  alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= image.ImgName%></h5>
+                        <p class="card-text"><%= image.ImgDetails %></p>
+                  
+                        <a class="btn btn-primary" href="/images/<%=image._id%>">View <%=image.ImgName%></a>
+                    </div>
+                  </div>
+                </div>
+                <% }%> 
+            </div>
+        </section>
+            
+      
+ 
+
+   

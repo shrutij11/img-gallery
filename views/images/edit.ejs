@@ -1,0 +1,26 @@
+<% layout ('layouts/boilerplate')%>
+
+
+        <div class="row">
+            <h1 class="text-center">Edit Image</h1>
+            <div class="col-md-6 offset-md-3"> 
+                <form action="/images/<%=image._id%>?_method=PUT" method="POST" novalidate class="validated-form">
+                <div class="mb-3">
+                    <lable class="form-label" for="ImgName">Image Name</lable>
+                    <input class="form-control" type="text" id="ImgName" name="ImgName" value="<%=image.ImgName %>" required>
+                </div>
+                <div class="mb-3">
+                    <lable class="form-label" for="ImgDetails">Image Details</lable>
+                    <textarea class="form-control" type="text" id="ImgDetails" name="ImgDetails" value="<%=image.ImgDetails %>"required><%=image.ImgDetails %></textarea>
+                </div>
+                <div class="mb-3">
+                    <lable class="form-label" for="ImgURL">Image URL</lable>
+                    <input class="form-control" type="text" id="ImgURL" name="ImgURL" value="<%=image.ImgURL %>" required>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success">Update image</button> 
+                    </div>
+                </form>
+                <a href="/images/<%= image._id%>">Back to Image</a>
+            </div>
+        </div>
